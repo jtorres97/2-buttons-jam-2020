@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
         }
 
         IsAlive = true;
+        
+        SetCameraX();
     }
 
     private void Start()
@@ -34,7 +36,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             m_didFlap = true;
-            Debug.Log("yes");
         }
     }
 
@@ -53,5 +54,11 @@ public class Player : MonoBehaviour
                 
             }
         }
+    }
+
+    public void SetCameraX()
+    {
+        CameraFollow2D.offsetX = (Camera.main.transform.position.x - transform.position.x) - 1f;
+        Debug.Log(CameraFollow2D.offsetX);
     }
 }
