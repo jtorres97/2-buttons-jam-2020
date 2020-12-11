@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameController
+  - FlapButton
+  - Background
+  - Ground
+  - Chimney
+  - ChimneyHolder
   layers:
   - Default
   - TransparentFX
@@ -13,13 +19,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BGCollector
+  - Background
+  - Ground
+  - Player
+  - Chimney
+  - ChimneyCollector
+  - ChimneyHolder
   - 
   - 
   - 
@@ -40,4 +46,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1246673281
+    locked: 0
+  - name: Ground
+    uniqueID: 1718504695
+    locked: 0
+  - name: Chimney
+    uniqueID: 1154063059
+    locked: 0
+  - name: Player
+    uniqueID: 1623109371
+    locked: 0
+  - name: Canvas
+    uniqueID: 323375925
     locked: 0
