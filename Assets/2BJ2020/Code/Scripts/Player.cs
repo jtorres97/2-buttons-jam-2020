@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Channels;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -33,9 +34,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Mouse0))
         {
             m_didFlap = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            Debug.Log("Drop Gift!");
         }
     }
 
