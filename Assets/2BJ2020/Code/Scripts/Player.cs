@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Remoting.Channels;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             Debug.Log("Drop Gift!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name) ;
         }
     }
 
@@ -65,6 +67,5 @@ public class Player : MonoBehaviour
     public void SetCameraX()
     {
         CameraFollow2D.offsetX = (Camera.main.transform.position.x - transform.position.x) - 1f;
-        Debug.Log(CameraFollow2D.offsetX);
     }
 }
