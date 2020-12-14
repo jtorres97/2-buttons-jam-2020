@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/2BJ2020/Scenes/2BJ2020_Menu.unity
+    guid: 1814cbb5ac5109d46aabf36d0999e1ba
+  - enabled: 1
+    path: Assets/2BJ2020/Scenes/2BJ2020_Game.unity
+    guid: 8785507d68191b54d9cf7363ea6b0bc1
+  - enabled: 1
+    path: Assets/2BJ2020/Scenes/2BJ2020_Highscores.unity
+    guid: 4872d166f0fb1e445b2ad924eeca8fee
   m_configObjects: {}
