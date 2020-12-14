@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_forwardSpeed = 4f;
     [SerializeField] private float m_bounceSpeed = 4f;
     [SerializeField] private GameObject m_giftLaunchPosition;
-    [SerializeField] private GameObject m_laserPosition;
+    [SerializeField] private Laser m_laser;
 
     private bool m_didJumpAccelerate;
     private static readonly int IsDead = Animator.StringToHash("IsDead");
@@ -38,6 +39,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             Fire();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -80,12 +86,14 @@ public class PlayerController : MonoBehaviour
             {
                 IsAlive = false;
                 m_animator.SetBool(IsDead, true);
+                m_laser.DisableLaser();
             }
         }
     }
 
     public void DestroyPlayer()
     {
-        gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.SetActive(false);
     }
 }

@@ -6,8 +6,8 @@ public class ChimneyCollector : MonoBehaviour
     private GameObject[] m_chimneyHolders;
     private float m_distance = 7.5f;
     private float m_lastChimneysX;
-    private float m_chimneyMin = -4.0f;
-    private float m_chimneyMax = 0f;
+    private float m_chimneyMin = -3.5f;
+    private float m_chimneyMax = 2f;
 
     private void Awake()
     {
