@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator m_animator;
     [SerializeField] private float m_forwardSpeed = 4f;
     [SerializeField] private float m_bounceSpeed = 4f;
-    [SerializeField] private GameObject m_firePosition;
+    [SerializeField] private GameObject m_giftLaunchPosition;
+    [SerializeField] private GameObject m_laserPosition;
 
     private bool m_didJumpAccelerate;
     private static readonly int IsDead = Animator.StringToHash("IsDead");
@@ -45,8 +46,8 @@ public class PlayerController : MonoBehaviour
         var go = ObjectPooler.Instance.GetPooledObject();
         if (go == null) return;
 
-        go.transform.position = m_firePosition.transform.position;
-        go.transform.rotation = m_firePosition.transform.rotation;
+        go.transform.position = m_giftLaunchPosition.transform.position;
+        go.transform.rotation = m_giftLaunchPosition.transform.rotation;
         go.SetActive(true);
     }
 
