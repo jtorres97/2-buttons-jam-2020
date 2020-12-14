@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6267043703630436590}
   - component: {fileID: 6267043703630436589}
   - component: {fileID: 6267043703630436592}
+  - component: {fileID: 382553473}
   - component: {fileID: 4005169927345885980}
   m_Layer: 15
   m_Name: GiftBox_1
@@ -132,6 +133,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &382553473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267043703630436588}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97d9f55cf2c0ec747acaf5edea3a06b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4005169927345885980
 MonoBehaviour:
   m_ObjectHideFlags: 0

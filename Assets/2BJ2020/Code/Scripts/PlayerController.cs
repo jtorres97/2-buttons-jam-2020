@@ -83,11 +83,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // TODO: Add scoring here
-    }
-
     public void DestroyPlayer()
     {
         gameObject.SetActive(false);

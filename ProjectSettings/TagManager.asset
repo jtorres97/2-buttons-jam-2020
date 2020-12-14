@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameController
-  - FlapButton
   - Background
   - Ground
   - Chimney
   - ChimneyHolder
+  - Gift
+  - GiftCatcher
   layers:
   - Default
   - TransparentFX
