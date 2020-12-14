@@ -13,7 +13,7 @@ public class CameraFollow2D : MonoBehaviour
 
     private void Update()
     {
-        if (Player.Instance != null)
+        if (PlayerController.Instance != null)
         {
             MoveTheCamera();
         }
@@ -22,7 +22,7 @@ public class CameraFollow2D : MonoBehaviour
     private void MoveTheCamera()
     {
         Vector3 temp = transform.position;
-        temp.x = Player.Instance.transform.position.x + offsetX;
+        temp.x = PlayerController.Instance.transform.position.x + offsetX;
         transform.position = temp;
     }
 }
