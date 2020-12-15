@@ -7,9 +7,7 @@ public class GameController : MonoBehaviour
     
     [SerializeField] private SceneTransitioner m_sceneTransitioner;
     [SerializeField] private GameObject m_gameOverPanel;
-
-    public int Score { get; set; }
-    public int HighScore { get; set; }
+    [SerializeField] private GameObject m_gameOverScoreText;
 
     private void Awake()
     {
@@ -20,6 +18,7 @@ public class GameController : MonoBehaviour
     {
         m_sceneTransitioner.Transition(true);
         Time.timeScale = 1f;
+        ScoreManager.Instance.ResetScore();
     }
 
     public void BackToMenu()
@@ -31,16 +30,16 @@ public class GameController : MonoBehaviour
     public void ShowGameOverScreen()
     {
         m_gameOverPanel.SetActive(true);
+
+        if (ScoreManager.Instance.HighScoreWasUpdated)
+        {
+            m_gameOverScoreText.SetActive(true);
+        }
+        else
+        {
+            m_gameOverScoreText.SetActive(false);
+        }
+        
         Time.timeScale = 0f;
-    }
-
-    public void AddScore(int scoreToAdd)
-    {
-        // TODO: Scoring system
-    }
-
-    public void NewHighScore(int newHighScore)
-    {
-        // TODO: Highscore systems
     }
 }

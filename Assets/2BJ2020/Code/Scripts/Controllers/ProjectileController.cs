@@ -39,13 +39,23 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Play little sparkle animation
-        m_animator.SetBool(DroppedIntoChimney, true);
-        
-        // Make it stay still
-        m_rigidbody2D.velocity = Vector2.zero;
-        m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-        
-        // TODO: Add score here
+        if (other.CompareTag("GiftCatcher"))
+        {
+            m_animator.SetBool(DroppedIntoChimney, true);
+            m_rigidbody2D.velocity = Vector2.zero;
+            m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            ScoreManager.Instance.AddScore(10);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            if (ScoreManager.Instance.Score != 0)
+            {
+                ScoreManager.Instance.RemoveScore(10);
+            }
+        }
     }
 }

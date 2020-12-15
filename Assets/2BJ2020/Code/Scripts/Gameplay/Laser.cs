@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    [SerializeField] private Camera m_camera;
     [SerializeField] private LineRenderer m_lineRenderer;
     [SerializeField] private Transform m_firePoint;
     [SerializeField] private bool m_isPlayer;
@@ -17,21 +16,6 @@ public class Laser : MonoBehaviour
     private void Update()
     {
         UpdateLaser();
-        
-        // if (Input.GetButtonDown("Fire1"))
-        // {
-        //     EnableLaser();
-        // }
-        //
-        // if (Input.GetButton("Fire1"))
-        // {
-        //     UpdateLaser();
-        // }
-        //
-        // if (Input.GetButtonUp("Fire1"))
-        // {
-        //     DisableLaser();
-        // }
     }
 
     public void DisableLaser()
@@ -54,6 +38,8 @@ public class Laser : MonoBehaviour
             {
                 Instantiate(m_objectExplosion, hit.collider.transform.position, hit.collider.transform.rotation);
                 Destroy(hit.collider.gameObject);
+                
+                ScoreManager.Instance.AddScore(25);
             }
         }
     }
