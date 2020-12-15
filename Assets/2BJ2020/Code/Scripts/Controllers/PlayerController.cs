@@ -76,11 +76,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.CompareTag("ChimneyHolder") && !other.gameObject.CompareTag("Enemy")) return;
+        if (!other.gameObject.CompareTag("ChimneyHolder") && !other.gameObject.CompareTag("Enemy") && !other.gameObject.CompareTag("Ground")) return;
         
         if (IsAlive)
         {
-            StartCoroutine(CoDestroyPlayer());
+            DestroyPlayer();
         }
     }
 
@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         m_laser.DisableLaser();
 
         yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().enabled = false;
         GameController.Instance.ShowGameOverScreen();
     }
 

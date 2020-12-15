@@ -184,7 +184,7 @@ MonoBehaviour:
   m_shotToFire: {fileID: 7540559964081698858, guid: 5b0192f9003d3d647a98ed3a6e7234b8,
     type: 3}
   m_firePoint: {fileID: 4549870822721450004}
-  m_initialTimeBetweenShots: 0.25
+  m_initialTimeBetweenShots: 0.5
   m_canShoot: 1
 --- !u!1 &5468988696912064546
 GameObject:
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5468988696912064546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.107, z: 0}
+  m_LocalPosition: {x: -1.75, y: -0.107, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4054110461223482800}
