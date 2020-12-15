@@ -3,13 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] private SceneTransitioner m_sceneTransitioner;
+    
     public void StartGame()
     {
-        SceneManager.LoadScene("2BJ2020_Game");
+        m_sceneTransitioner.Transition();
     }
 
     public void OpenHighscores()
     {
-        SceneManager.LoadScene("2BJ2020_Highscores");
+        // TODO: Show highscores here (highscore panel)
     }
 }
