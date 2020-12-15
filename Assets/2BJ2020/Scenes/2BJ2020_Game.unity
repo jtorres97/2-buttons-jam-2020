@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 17ddde979213d054887069cc1aa57a5e,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -10142,15 +10142,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411697720, guid: 0efd740be0bb22c4291f4503fc554dae, type: 3}
+      propertyPath: m_startDirection.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 411697720, guid: 0efd740be0bb22c4291f4503fc554dae, type: 3}
+      propertyPath: m_initialTimeBetweenShots
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4054110461223482800, guid: 0efd740be0bb22c4291f4503fc554dae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.4
+      value: 17.68
       objectReference: {fileID: 0}
     - target: {fileID: 4054110461223482800, guid: 0efd740be0bb22c4291f4503fc554dae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3284338
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4054110461223482800, guid: 0efd740be0bb22c4291f4503fc554dae,
         type: 3}
@@ -10200,18 +10208,8 @@ PrefabInstance:
     - target: {fileID: 4054110461223482805, guid: 0efd740be0bb22c4291f4503fc554dae,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy_1
       objectReference: {fileID: 0}
-    - target: {fileID: 4054110461223482805, guid: 0efd740be0bb22c4291f4503fc554dae,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4054110461223482806, guid: 0efd740be0bb22c4291f4503fc554dae,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2e25b74d4fc5ab3468723f8779008988, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0efd740be0bb22c4291f4503fc554dae, type: 3}
 --- !u!1 &2004263874

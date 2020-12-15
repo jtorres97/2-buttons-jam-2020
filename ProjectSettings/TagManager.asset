@@ -25,7 +25,7 @@ TagManager:
   - Background
   - Ground
   - Player
-  - Chimney
+  - Enemy
   - ChimneyCollector
   - ChimneyHolder
   - GiftBox
@@ -60,6 +60,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1623109371
+    locked: 0
+  - name: Enemy
+    uniqueID: 1550788061
     locked: 0
   - name: Canvas
     uniqueID: 323375925

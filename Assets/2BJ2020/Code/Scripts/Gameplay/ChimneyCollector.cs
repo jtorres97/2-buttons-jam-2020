@@ -37,7 +37,6 @@ public class ChimneyCollector : MonoBehaviour
         {
             Vector3 temp = other.transform.position;
             m_distance = Random.Range(5.0f, 10.0f);
-            Debug.Log(m_distance);
             temp.x = m_lastChimneysX + m_distance;
             temp.y = Random.Range(m_chimneyMin, m_chimneyMax);
 
