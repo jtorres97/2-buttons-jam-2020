@@ -12,7 +12,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject m_shotToFire;
     [SerializeField] private Transform m_firePoint;
     [SerializeField] private float m_initialTimeBetweenShots;
+    [SerializeField] private bool m_canShoot;
 
+    private bool m_allowShooting;
     private float m_shotCounter;
 
     private void Start()
@@ -38,16 +40,27 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        m_shotCounter -= Time.deltaTime;
-        if (m_shotCounter <= 0)
+        if (m_allowShooting)
         {
-            m_shotCounter = Random.Range(m_initialTimeBetweenShots, 3);
-            Instantiate(m_shotToFire, m_firePoint.position, m_firePoint.rotation);
+            m_shotCounter -= Time.deltaTime;
+            if (m_shotCounter <= 0)
+            {
+                m_shotCounter = Random.Range(m_initialTimeBetweenShots, 1);
+                Instantiate(m_shotToFire, m_firePoint.position, m_firePoint.rotation);
+            }
         }
     }
 
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    private void OnBecameVisible()
+    {
+        if (m_canShoot)
+        {
+            m_allowShooting = true;
+        }
     }
 }

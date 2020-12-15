@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -40,11 +41,6 @@ public class PlayerController : MonoBehaviour
         {
             Fire();
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 
     private void Fire()
@@ -80,20 +76,26 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("ChimneyHolder"))
+        if (!other.gameObject.CompareTag("ChimneyHolder") && !other.gameObject.CompareTag("Enemy")) return;
+        
+        if (IsAlive)
         {
-            if (IsAlive)
-            {
-                IsAlive = false;
-                m_animator.SetBool(IsDead, true);
-                m_laser.DisableLaser();
-            }
+            StartCoroutine(CoDestroyPlayer());
         }
+    }
+
+    private IEnumerator CoDestroyPlayer()
+    {
+        IsAlive = false;
+        m_animator.SetBool(IsDead, true);
+        m_laser.DisableLaser();
+
+        yield return new WaitForSeconds(0.5f);
+        GameController.Instance.ShowGameOverScreen();
     }
 
     public void DestroyPlayer()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
-        //gameObject.SetActive(false);
+        StartCoroutine(CoDestroyPlayer());
     }
 }

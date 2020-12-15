@@ -7,7 +7,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private LineRenderer m_lineRenderer;
     [SerializeField] private Transform m_firePoint;
     [SerializeField] private bool m_isPlayer;
-    [SerializeField] private bool m_isEnemy;
+    [SerializeField] private GameObject m_objectExplosion;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class Laser : MonoBehaviour
             m_lineRenderer.SetPosition(1, hit.point);
             if (m_isPlayer && hit.collider.CompareTag("Enemy"))
             {
-                Debug.Log("Hit the enemy");
+                Instantiate(m_objectExplosion, hit.collider.transform.position, hit.collider.transform.rotation);
                 Destroy(hit.collider.gameObject);
             }
         }

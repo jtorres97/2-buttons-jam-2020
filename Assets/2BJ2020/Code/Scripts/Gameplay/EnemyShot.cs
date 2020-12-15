@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class EnemyShot : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            // TODO: Kill player
+            PlayerController.Instance.DestroyPlayer();
         }
 
         Destroy(gameObject);

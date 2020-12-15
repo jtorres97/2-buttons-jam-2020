@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TransitionTex:
-        m_Texture: {fileID: 2800000, guid: d4d303e7766e39443865a00d00283fa7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34e87e114fca1cb4882d8a52c57d0a4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranstionTex:

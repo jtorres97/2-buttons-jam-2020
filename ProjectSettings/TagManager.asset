@@ -21,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - BGCollector
+  - 
   - Background
   - Ground
   - Player
@@ -29,7 +29,7 @@ TagManager:
   - ChimneyCollector
   - ChimneyHolder
   - GiftBox
-  - 
+  - EnemyShot
   - 
   - 
   - 

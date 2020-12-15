@@ -17,10 +17,13 @@ public class SceneTransitioner : MonoBehaviour
     private static readonly int Smoothing = Shader.PropertyToID("_Smoothing");
     private static readonly int TransitionTex = Shader.PropertyToID("_TransitionTex");
 
+    public bool ReloadCurrentScene { get; set; }
+
     private void Start()
     {
         m_image = GetComponent<Image>();
         m_shouldReveal = true;
+        ReloadCurrentScene = false;
         
         SwitchTransition();
     }
@@ -37,7 +40,7 @@ public class SceneTransitioner : MonoBehaviour
 
             if (Math.Abs(m_image.material.GetFloat(Cutoff) - (-0.1f - m_image.material.GetFloat(Smoothing))) < Mathf.Epsilon)
             {
-                SceneManager.LoadScene(m_sceneToLoad);
+                SceneManager.LoadScene(ReloadCurrentScene ? SceneManager.GetActiveScene().name : m_sceneToLoad);
             }
         }
     }
@@ -48,8 +51,9 @@ public class SceneTransitioner : MonoBehaviour
         m_image.material.SetTexture(TransitionTex, m_transitions[newTransition].texture);
     }
 
-    public void Transition()
+    public void Transition(bool reloadCurrentScene = false)
     {
+        ReloadCurrentScene = reloadCurrentScene;
         m_shouldReveal = !m_shouldReveal;
         SwitchTransition();
     }
