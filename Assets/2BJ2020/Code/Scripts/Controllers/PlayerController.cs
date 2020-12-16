@@ -86,6 +86,8 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator CoDestroyPlayer()
     {
+        SoundController.Instance.PlaySFX(0);
+        
         IsAlive = false;
         m_animator.SetBool(IsDead, true);
         m_laser.DisableLaser();

@@ -1,24 +1,53 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private SceneTransitioner m_sceneTransitioner;
-    [SerializeField] private GameObject m_highScoresPanel;
-    
+    [SerializeField] private GameObject m_optionsPanel;
+    [SerializeField] private Slider m_musicVolSlider;
+    [SerializeField] private Slider m_sfxVolSlider;
+
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey("SliderMusicVolumeLevel") && !PlayerPrefs.HasKey("SliderSFXVolumeLevel"))
+        {
+            PlayerPrefs.SetFloat("SliderMusicVolumeLevel", -20);
+            PlayerPrefs.SetFloat("SliderSFXVolumeLevel", -20);
+        }
+    }
+
+    private void Start()
+    {
+        SoundController.Instance.PlayMenuMusic();
+    }
+
+    private void Update()
+    {
+        UpdateSlider();
+    }
+
+    private void UpdateSlider()
+    {
+        m_musicVolSlider.value = PlayerPrefs.GetFloat("SliderMusicVolumeLevel");
+        m_sfxVolSlider.value = PlayerPrefs.GetFloat("SliderSFXVolumeLevel");
+    }
+
     public void StartGame()
     {
         m_sceneTransitioner.Transition();
+        SoundController.Instance.PlayLevelMusic();
     }
 
-    public void OpenHighscores()
+    public void OpenOptionsPanel()
     {
-        // TODO: Show highscores here (highscore panel)
-        m_highScoresPanel.SetActive(true);
+        m_optionsPanel.SetActive(true);
     }
 
-    public void CloseHighScores()
+    public void CloseOptionsPanel()
     {
-        m_highScoresPanel.SetActive(false);
+        m_optionsPanel.SetActive(false);
+        PlayerPrefs.Save();
     }
 }

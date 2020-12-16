@@ -40,6 +40,8 @@ public class Laser : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 
                 ScoreManager.Instance.AddScore(25);
+
+                SoundController.Instance.PlaySFX(1, true);
             }
         }
     }

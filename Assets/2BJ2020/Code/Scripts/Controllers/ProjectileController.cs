@@ -45,6 +45,8 @@ public class ProjectileController : MonoBehaviour
             m_rigidbody2D.velocity = Vector2.zero;
             m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
             ScoreManager.Instance.AddScore(10);
+
+            SoundController.Instance.PlaySFX(2);
         }
     }
 
@@ -55,6 +57,8 @@ public class ProjectileController : MonoBehaviour
             if (ScoreManager.Instance.Score != 0)
             {
                 ScoreManager.Instance.RemoveScore(10);
+                
+                SoundController.Instance.PlaySFX(3);
             }
         }
     }
