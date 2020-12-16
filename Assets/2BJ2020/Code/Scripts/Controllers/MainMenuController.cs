@@ -6,6 +6,7 @@ public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private SceneTransitioner m_sceneTransitioner;
     [SerializeField] private GameObject m_optionsPanel;
+    [SerializeField] private GameObject m_howToPlayPanel;
     [SerializeField] private Slider m_musicVolSlider;
     [SerializeField] private Slider m_sfxVolSlider;
 
@@ -49,5 +50,15 @@ public class MainMenuController : MonoBehaviour
     {
         m_optionsPanel.SetActive(false);
         PlayerPrefs.Save();
+    }
+
+    public void ShowHowToPlayPanel()
+    {
+        m_howToPlayPanel.SetActive(true);
+    }
+    
+    public void HideHowToPlayPanel()
+    {
+        m_howToPlayPanel.SetActive(false);
     }
 }
