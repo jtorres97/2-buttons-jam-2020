@@ -34,6 +34,7 @@ public class ScoreManager : MonoBehaviour
     public void RemoveScore(int scoreToRemove)
     {
         Score -= scoreToRemove;
+        m_scoreText.text = "SCORE: " + Score;
     }
 
     public void UpdateHighScore()

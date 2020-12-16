@@ -1,10 +1,12 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField] private float m_projectileSpeed;
-    
+    [SerializeField] private GameObject m_floatingScoreTextPrefab;
+
     private Rigidbody2D m_rigidbody2D;
     private Animator m_animator;
     
@@ -44,7 +46,10 @@ public class ProjectileController : MonoBehaviour
             m_animator.SetBool(DroppedIntoChimney, true);
             m_rigidbody2D.velocity = Vector2.zero;
             m_rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-            ScoreManager.Instance.AddScore(10);
+            ScoreManager.Instance.AddScore(100);
+            
+            GameObject scoreTextUi = Instantiate(m_floatingScoreTextPrefab, m_rigidbody2D.transform.position, m_rigidbody2D.transform.rotation);
+            scoreTextUi.transform.GetChild(0).GetComponent<TextMeshPro>().SetText("+100");
 
             SoundController.Instance.PlaySFX(2);
         }
@@ -56,7 +61,11 @@ public class ProjectileController : MonoBehaviour
         {
             if (ScoreManager.Instance.Score != 0)
             {
-                ScoreManager.Instance.RemoveScore(10);
+                GameObject scoreTextUi = Instantiate(m_floatingScoreTextPrefab, m_rigidbody2D.transform.position + new Vector3(0, 7f), m_rigidbody2D.transform.rotation);
+                scoreTextUi.transform.GetChild(0).GetComponent<TextMeshPro>().SetText("-100");
+                scoreTextUi.transform.GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 0, 0);
+                
+                ScoreManager.Instance.RemoveScore(100);
                 
                 SoundController.Instance.PlaySFX(3);
             }

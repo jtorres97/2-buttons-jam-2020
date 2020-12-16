@@ -399,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116688629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.19, z: 0}
+  m_LocalPosition: {x: 0, y: -5.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 645957942}
@@ -2829,8 +2829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -64.7788, y: -45.3904}
+  m_AnchoredPosition: {x: 0, y: 8}
+  m_SizeDelta: {x: -64.779, y: -61.718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647816129
 MonoBehaviour:
@@ -3034,7 +3034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680132663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.78488, y: 0.7073743, z: 1.8558601}
+  m_LocalPosition: {x: -11.78488, y: 4.4573746, z: 1.8558601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1801251578}
@@ -3075,7 +3075,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -3137,7 +3137,7 @@ MonoBehaviour:
   m_rigidbody2D: {fileID: 680132667}
   m_animator: {fileID: 680132666}
   m_forwardSpeed: 6
-  m_bounceSpeed: 3.5
+  m_bounceSpeed: 4
   m_giftLaunchPosition: {fileID: 1801251577}
   m_laser: {fileID: 1244219254}
 --- !u!1 &691553342
@@ -4949,7 +4949,7 @@ GameObject:
   - component: {fileID: 849905610}
   m_Layer: 5
   m_Name: --- CANVAS ---
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5147,7 +5147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878840826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18, y: 3.0700002, z: 10}
+  m_LocalPosition: {x: 19, y: 3.5700002, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 645957942}
@@ -5248,12 +5248,12 @@ PrefabInstance:
     - target: {fileID: 8379108110267184907, guid: 514c5dbaac85171449cb65a655c758e1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 1978.135
       objectReference: {fileID: 0}
     - target: {fileID: 8379108110267184907, guid: 514c5dbaac85171449cb65a655c758e1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1080
+      value: 1261.671
       objectReference: {fileID: 0}
     - target: {fileID: 8379108110267184907, guid: 514c5dbaac85171449cb65a655c758e1,
         type: 3}
@@ -7586,6 +7586,8 @@ MonoBehaviour:
   m_isPlayer: 1
   m_objectExplosion: {fileID: 1454569041970887111, guid: 16c3fe5e781703641acc4a5debb201fa,
     type: 3}
+  m_floatingScoreTextPrefab: {fileID: 2351029974495978597, guid: fc31c215404df2341ba7f70c9228f662,
+    type: 3}
 --- !u!1 &1244830753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,7 +8692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345678240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -2.6800003, z: 10}
+  m_LocalPosition: {x: 12, y: 1.3199997, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 645957942}
@@ -10393,6 +10395,8 @@ MonoBehaviour:
   m_gameOverPanel: {fileID: 691553342}
   m_gameOverScoreText: {fileID: 1111936753}
   m_howToPlayPanel: {fileID: 647816127}
+  m_playAgainButton: {fileID: 1269521298}
+  m_backToMenuButton: {fileID: 1991811994}
 --- !u!1 &1630746911
 GameObject:
   m_ObjectHideFlags: 0

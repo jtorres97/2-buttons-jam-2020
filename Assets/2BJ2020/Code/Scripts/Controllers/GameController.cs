@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject m_gameOverPanel;
     [SerializeField] private GameObject m_gameOverScoreText;
     [SerializeField] private GameObject m_howToPlayPanel;
+    [SerializeField] private Button m_playAgainButton, m_backToMenuButton;
 
     private void Awake()
     {
@@ -39,6 +41,7 @@ public class GameController : MonoBehaviour
 
     public void PlayAgain()
     {
+        m_playAgainButton.interactable = false;
         m_sceneTransitioner.Transition(true);
         Time.timeScale = 1f;
         ScoreManager.Instance.ResetScore();
@@ -46,6 +49,7 @@ public class GameController : MonoBehaviour
 
     public void BackToMenu()
     {
+        m_backToMenuButton.interactable = false;
         m_sceneTransitioner.Transition();
         Time.timeScale = 1f;
     }

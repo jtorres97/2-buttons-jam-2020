@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] private Button m_playButton;
     [SerializeField] private SceneTransitioner m_sceneTransitioner;
     [SerializeField] private GameObject m_optionsPanel;
     [SerializeField] private GameObject m_howToPlayPanel;
@@ -37,6 +38,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
+        m_playButton.interactable = false;
         m_sceneTransitioner.Transition();
         SoundController.Instance.PlayLevelMusic();
     }

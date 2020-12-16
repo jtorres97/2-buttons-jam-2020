@@ -166,3 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectileSpeed: 10
+  m_floatingScoreTextPrefab: {fileID: 2351029974495978597, guid: fc31c215404df2341ba7f70c9228f662,
+    type: 3}

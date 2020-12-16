@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TMPro;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -7,6 +7,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private Transform m_firePoint;
     [SerializeField] private bool m_isPlayer;
     [SerializeField] private GameObject m_objectExplosion;
+    [SerializeField] private GameObject m_floatingScoreTextPrefab;
 
     private void Start()
     {
@@ -39,7 +40,23 @@ public class Laser : MonoBehaviour
                 Instantiate(m_objectExplosion, hit.collider.transform.position, hit.collider.transform.rotation);
                 Destroy(hit.collider.gameObject);
                 
-                ScoreManager.Instance.AddScore(25);
+                ScoreManager.Instance.AddScore(10);
+
+                GameObject scoreTextUi = Instantiate(m_floatingScoreTextPrefab, hit.collider.transform.position, hit.collider.transform.rotation);
+                scoreTextUi.transform.GetChild(0).GetComponent<TextMeshPro>().SetText("+10");
+
+                SoundController.Instance.PlaySFX(1, true);
+            }
+
+            if (m_isPlayer && hit.collider.CompareTag("Boss"))
+            {
+                Instantiate(m_objectExplosion, hit.collider.transform.position, hit.collider.transform.rotation);
+                Destroy(hit.collider.gameObject);
+                
+                ScoreManager.Instance.AddScore(1000);
+
+                GameObject scoreTextUi = Instantiate(m_floatingScoreTextPrefab, hit.collider.transform.position, hit.collider.transform.rotation);
+                scoreTextUi.transform.GetChild(0).GetComponent<TextMeshPro>().SetText("+1000");
 
                 SoundController.Instance.PlaySFX(1, true);
             }
@@ -49,10 +66,5 @@ public class Laser : MonoBehaviour
     public void EnableLaser()
     {
         m_lineRenderer.enabled = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Laser Collision");
     }
 }
