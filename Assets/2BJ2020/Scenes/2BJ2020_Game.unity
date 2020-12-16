@@ -4681,7 +4681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_waves:
-  - timeToSpawn: 120
+  - timeToSpawn: 100
     theWave: {fileID: 7198612299646178963, guid: 733178cb83a39414c8fae462ace83071,
       type: 3}
   m_currentWave: 0
